@@ -9,9 +9,12 @@ class TodoItemsComponent extends React.PureComponent {
     return (
       <div>
         {todoItems.map((todoItem) => (
-          <div key={todoItem.id}>
-            <TodoItem onChange={setTodoItemDone} onDelete={deleteTodoItem} todoItem={todoItem} />
-          </div>
+          <TodoItem
+            key={todoItem.id}
+            onChange={setTodoItemDone}
+            onDelete={deleteTodoItem}
+            todoItem={todoItem}
+          />
         ))}
       </div>
     );

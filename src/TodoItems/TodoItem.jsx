@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Checkbox, Button } from 'antd';
+import './todoItem.css';
 
 export class TodoItem extends React.PureComponent {
   onChange = () => {
@@ -15,12 +16,16 @@ export class TodoItem extends React.PureComponent {
   render() {
     const { todoItem } = this.props;
     return (
-      <React.Fragment>
-        <Checkbox checked={todoItem.done} onChange={this.onChange}>
-          {todoItem.text}
-        </Checkbox>
-        <Button htmlType="button" type="dashed" shape="circle" icon="delete" onClick={this.onDelete} />
-      </React.Fragment>
+      <div className="todo-item">
+        <div>
+          <Checkbox checked={todoItem.done} onChange={this.onChange}>
+            {todoItem.text}
+          </Checkbox>
+        </div>
+        <div>
+          <Button htmlType="button" type="dashed" shape="circle" icon="delete" onClick={this.onDelete} />
+        </div>
+      </div>
     );
   }
 }
