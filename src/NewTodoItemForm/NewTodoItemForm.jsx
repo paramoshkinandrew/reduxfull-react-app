@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import {
   Form, Input, Button,
 } from 'antd';
-import { addTodoItem } from "./newTodoItemFormActions";
-import { getNumber } from "../utils/getNumber";
+
+import { getNumber } from '../utils/getNumber';
+import { addTodoItem } from './newTodoItemFormActions';
 
 class NewTodoItemFormComponent extends React.PureComponent {
   handleSubmit = (e) => {
@@ -24,10 +25,10 @@ class NewTodoItemFormComponent extends React.PureComponent {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Item>
-          {getFieldDecorator('text')(<Input placeholder="Todo" />)}
+          {getFieldDecorator('text')(<Input placeholder='Todo' />)}
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type='primary' htmlType='submit'>
             Add
           </Button>
         </Form.Item>
